@@ -24,7 +24,7 @@ function ChangeView({ center, zoom }) {
 
 // Icono personalizado para marcadores
 const customIcon = new L.Icon({
-  iconUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon.png',
+  iconUrl: '/location.png',
   iconSize: [25, 41],
   iconAnchor: [12, 41],
   popupAnchor: [1, -34],
@@ -40,10 +40,223 @@ export default function UniversityMapSearch() {
   const [searchHistory, setSearchHistory] = useState([])
   const [userLocation, setUserLocation] = useState(null)
   const [places, setPlaces] = useState([
-    { name: 'Porton #7 UNAN', lat: 12.1058288, lng: -86.272669 },
-    { name: 'Departamento de Quimica', lat: 12.1058288, lng: -86.272669 },
-    { name: 'Comerdor de la UNAN', lat: 12.1060099, lng: -86.2728715 }
-  ])
+    {
+      "name": "Centro de innovación y diseño",
+      "lat": 12.107481,
+      "lng": -86.2732385
+    },
+    {
+      "name": "Laboratorio de electrónica básica 1",
+      "lat": 12.1068031,
+      "lng": -86.2731997
+    },
+    {
+      "name": "Estadio nacional",
+      "lat": 12.1092217,
+      "lng": -86.2732362
+    },
+    {
+      "name": "Canchas Marlon Zelaya",
+      "lat": 12.1072128,
+      "lng": -86.2729479
+    },
+    {
+      "name": "Portón #8",
+      "lat": 12.1056613,
+      "lng": -86.2739644
+    },
+    {
+      "name": "Pabellón 11",
+      "lat": 12.105677,
+      "lng": -86.2738109
+    },
+    {
+      "name": "Gimnasio, karate, yudo",
+      "lat": 12.1063346,
+      "lng": -86.2735185
+    },
+    {
+      "name": "Laboratorio de geología",
+      "lat": 12.1058983,
+      "lng": -86.27383
+    },
+    {
+      "name": "Portón 7",
+      "lat": 12.1055174,
+      "lng": -86.2730535
+    },
+    {
+      "name": "Editorial universidad UNAN-CNU",
+      "lat": 12.1059055,
+      "lng": -86.2731695
+    },
+    {
+      "name": "Departamento de Química",
+      "lat": 12.1062481,
+      "lng": -86.2731215
+    },
+    {
+      "name": "Pabellón 15",
+      "lat": 12.1060488,
+      "lng": -86.2737445
+    },
+    {
+      "name": "Departamento de Psicología",
+      "lat": 12.106547,
+      "lng": -86.2729445
+    },
+    {
+      "name": "Departamento de Pedagogía",
+      "lat": 12.1065084,
+      "lng": -86.2727765
+    },
+    {
+      "name": "Departamento de Cultura",
+      "lat": 12.1063402,
+      "lng": -86.2730518
+    },
+    {
+      "name": "Portón 1",
+      "lat": 12.1066188,
+      "lng": -86.2724922
+    },
+    {
+      "name": "Club Universitario UNAN",
+      "lat": 12.1070007,
+      "lng": -86.2729442
+    },
+    {
+      "name": "Baños del Pabellón 7",
+      "lat": 12.1067716,
+      "lng": -86.2729214
+    },
+    {
+      "name": "Pabellón 19",
+      "lat": 12.106568,
+      "lng": -86.2733535
+    },
+    {
+      "name": "Comedor central de UNAN",
+      "lat": 12.1050682,
+      "lng": -86.2731792
+    },
+    {
+      "name": "Estacionamiento Portón 8",
+      "lat": 12.1064008,
+      "lng": -86.2737555
+    },
+    {
+      "name": "Portón 2",
+      "lat": 12.1066339,
+      "lng": -86.2721673
+    },
+    {
+      "name": "Pabellón 2 Servicios de Seguridad",
+      "lat": 12.106072,
+      "lng": -86.2719501
+    },
+    {
+      "name": "Pabellón 4 Dirección y Extensión UNAN",
+      "lat": 12.1062425,
+      "lng": -86.2719497
+    },
+    {
+      "name": "Secretaría General UNAN",
+      "lat": 12.1061989,
+      "lng": -86.2716728
+    },
+    {
+      "name": "Pabellón 6 Salón de Rectores",
+      "lat": 12.1063641,
+      "lng": -86.2719457
+    },
+    {
+      "name": "Edificio de Registro Académico UNAN",
+      "lat": 12.1063215,
+      "lng": -86.2715779
+    },
+    {
+      "name": "Oficinas de UNEN (RUD)",
+      "lat": 12.1063297,
+      "lng": -86.2713975
+    },
+    {
+      "name": "Micro-empresa Kiosco 2",
+      "lat": 12.1060255,
+      "lng": -86.2713982
+    },
+    {
+      "name": "Clínica",
+      "lat": 12.1058917,
+      "lng": -86.2711944
+    },
+    {
+      "name": "Portón 4",
+      "lat": 12.1055174,
+      "lng": -86.2722508
+    },
+    {
+      "name": "Estacionamiento Principal Portón 4",
+      "lat": 12.105421,
+      "lng": -86.2715498
+    },
+    {
+      "name": "Oficina de UNEN Pabellón 14",
+      "lat": 12.1060989,
+      "lng": -86.2710076
+    },
+    {
+      "name": "Pabellón 16",
+      "lat": 12.1062123,
+      "lng": -86.2708631
+    },
+    {
+      "name": "Auditorio 12 Fernando Gordillo",
+      "lat": 12.1059062,
+      "lng": -86.2708457
+    },
+    {
+      "name": "Departamento de Derecho",
+      "lat": 12.1053541,
+      "lng": -86.2711032
+    },
+    {
+      "name": "Pabellón 28",
+      "lat": 12.1052168,
+      "lng": -86.2710633
+    },
+    {
+      "name": "Pabellón 26 Departamento de Lenguas Extranjeras",
+      "lat": 12.1050656,
+      "lng": -86.2710499
+    },
+    {
+      "name": "Auditorio Sergio Herrera",
+      "lat": 12.1050312,
+      "lng": -86.2708249
+    },
+    {
+      "name": "Pabellón 32",
+      "lat": 12.1051466,
+      "lng": -86.2703716
+    },
+    {
+      "name": "Pabellón 34 Escuela Preparatoria",
+      "lat": 12.105244,
+      "lng": -86.2701014
+    },
+    {
+      "name": "Pabellón 36",
+      "lat": 12.1052951,
+      "lng": -86.2704604
+    },
+    {
+      "name": "Facultad de Humanidades y Ciencias Jurídicas",
+      "lat": 12.1058632,
+      "lng": -86.2702569
+    }
+  ]
+  )
   const [selectedPlace, setSelectedPlace] = useState(null)
   const [isAdmin, setIsAdmin] = useState(false)
   const [password, setPassword] = useState('')
